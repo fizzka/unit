@@ -1,0 +1,16 @@
+{
+    "listeners": {
+        "*:8300": {
+            "application": "nginx-unit-test"
+        }
+    },
+
+    "applications": {
+        "nginx-unit-test": {
+            "type": "php",
+            "workers": 4,
+            "root": "/srv",
+            "index": "index.php"
+        }
+    }
+}
