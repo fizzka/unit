@@ -1,6 +1,7 @@
 FROM fizzka/php-embed
 
 ARG UNIT_VERSION=0.4
+ARG CONTROL=0.0.0.0:8400
 
 RUN apk add --no-cache --virtual .build-deps g++ make && \
     wget -q https://github.com/nginx/unit/archive/${UNIT_VERSION}.tar.gz -O unit.tar.gz && \
@@ -10,7 +11,7 @@ RUN apk add --no-cache --virtual .build-deps g++ make && \
         --prefix=/ \
         --modules=/unit/modules \
         --state=/unit/state \
-        --control=0.0.0.0:8400 \
+        --control=${CONTROL} \
         && \
     ./configure php && \
     make all && \
