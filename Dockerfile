@@ -1,6 +1,6 @@
 FROM fizzka/php-embed
 
-ARG UNIT_VERSION=0.4
+ARG UNIT_VERSION=0.6
 ARG CONTROL=0.0.0.0:8400
 
 RUN apk add --no-cache --virtual .build-deps g++ make && \
