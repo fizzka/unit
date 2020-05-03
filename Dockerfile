@@ -3,7 +3,7 @@ FROM fizzka/php-embed:7.4.5-alpine
 ARG UNIT_VERSION=1.17.0
 ARG CONTROL=0.0.0.0:8400
 
-RUN set -eux; \
+RUN set -eux -o pipefail; \
 	export UNIT_URL=https://unit.nginx.org/download/unit-${UNIT_VERSION}.tar.gz; \
 	\
 	wget -q "${UNIT_URL}"; \
